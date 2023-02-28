@@ -1,26 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Snake Game</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="game-container">
-		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
-	</div>
-	<div class="keys">
-	  <a class="up arr" onclick="Snake.action('up')">
-	    <i class="chevron up"></i></a>
-	  <br />
-	  <a class="left arr" onclick="Snake.action('left')">
-	    <i class="chevron left"></i></a>
-	  <a class="down arr" onclick="Snake.action('down')">
-	    <i class="chevron down"></i></a>
-	  <a class="right arr" onclick="Snake.action('right')">
-	    <i class="chevron right"></i></a>
-	</div>
-	<script type="text/javascript" src="game.js"></script>
-</body>
-</html>
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  background: black;
+}
+.heart{
+  width: 100px;
+  height: 100px;
+  background: red;
+ transform: rotate(-45deg);
+ box-shadow: -10px 10px 120px red;
+ animation: heart 0.6 linear infinite;
+}
+@keyframes heart{
+ 0% {
+ transform: rotate(-50deg) scale(1.07);
+ }
+ 100%{
+  transform: rotate(-45deg) scale(1.0);
+ }
+ 100%{
+  transform: rotate(-45deg) scale(0.8);
+}
+
+}
+.heart::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: red;
+  top :-50%;
+  border-radius: 60px;
+  box-shadow: -10px 10px 120px red;
+}
+
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: red;
+  right :-50%;
+  border-radius: 60px;
+  box-shadow: -10px 10px 120px red;
+}
